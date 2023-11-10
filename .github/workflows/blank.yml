@@ -5,9 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: 
-    - docker
-    - test
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -20,10 +18,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      # - name: Create text file
-      #   run: echo "maar dunga" > mytextfile.txt
+      - name: Create text file
+        run: echo "maar dunga" > mytextfile.txt
 
       - name: Pull and run Docker image
         run: |
-          docker pull alpine:latest
-          docker run -d alpine:latest sleep 60
+          sudo docker pull alpine:latest
+          sudo docker run -d alpine:latest sleep 60
